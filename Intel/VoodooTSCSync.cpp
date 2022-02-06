@@ -65,7 +65,7 @@ void org_voodoo_driver_VoodooTSCSync::doTSC(){
 	
 	
 	uint64_t tsc = rdtsc64();
-	IOLog("Current tsc from rdtsc64() is %lld. Rendezvouing..\n",tsc);
+	IOLog("VoodooTSCSync: Current tsc from rdtsc64() is %lld. Rendezvouing..\n",tsc);
 	
 	//now call the kernel function that will call this "action" on all cores/processors
 	mp_rendezvous_no_intrs(stamp_tsc, (void*)&tsc);
